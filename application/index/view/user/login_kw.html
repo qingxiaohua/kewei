@@ -1,0 +1,277 @@
+
+
+    <!--<script type="text/javascript" src="/templates/kewei/js/browser.js"></script>-->
+
+    <style>input[type="submit"], input[type="reset"], input[type="button"], button {
+
+            -webkit-appearance: none; /*去掉苹果的默认UI来渲染按钮*/
+
+        }
+
+    </style>
+
+    <!--[if lt IE 9]>
+
+    <script>
+
+    (function(){
+
+        var tags = ['header','footer','figure','figcaption','details','summary','hgroup','nav','aside','article','section','mark','abbr','meter','output','progress','time','video','audio','canvas','dialog'];
+
+        for(var i=tags.length - 1;i>-1;i--){ document.createElement(tags[i]);}
+
+    })();
+
+    </script>
+
+    <![endif]-->
+
+
+
+</head>
+
+<body class="gray_bg">
+
+    <form class="demoform" id="form1">
+
+        <div class="warp">
+
+            <!--页面头部-->
+
+
+
+
+
+            <!--页面头部-->
+
+            <!--页面主体-->
+
+            <div class="container">
+
+                <div class="main link_way whitebg">
+
+                    <div class="z_logo">
+
+                        <img alt="" src="__CDN__/kewei/images/a_update/login01.png" />
+
+                        <p>用户登录</p>
+
+                    </div>
+
+                    <div class="container_box">
+
+                        <div class="input_box"><label for="" class="name"><img src="__CDN__/kewei/images/a_update/login02.png" alt="" /></label><input type="text" id="user_id" name="user_id" class="js_text" datatype="s6-18" placeholder="请输入您的用户名"><span class="Validform_checktip lf"></span></div>
+
+                        <div class="input_box"><label for="" class="password"><img src="__CDN__/kewei/images/a_update/login03.png" alt="" /></label><input type="password" class="js_password" id="password" name="password" datatype="*6-20" placeholder="请设置6～20位帐号密码"><span class="Validform_checktip lf"></span></div>
+
+
+
+                        <div class="cont_box1">
+
+                            <div class="cb_checkbox lf f16">
+
+                                <input type="checkbox" checked="checked">自动登录
+
+                            </div>
+
+                            <a class="lf js_fotget f16 hidden">忘记密码？</a>
+
+                            <a class="lt js_enroll f16 validate" href="enroll_kw.html"><img src="__CDN__/kewei/images/a_update/login04.png" alt="" class="lj_enroll" />立即注册</a>
+
+                            <div class="clr"></div>
+
+                        </div>
+
+                        <a class="enr_btn js_nouse enr_a">登<span class="wsp"></span>录</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--页面主体-->
+
+            <!--页面底部-->
+
+            <footer>
+			<div class="foot1">
+				<div class="main">
+					<div class="ewm_div"><img src="__CDN__/kewei/images/ewm_img.png" alt=""/></div>
+					<div class="company">
+						<h2>
+							<img src="__CDN__/kewei/images/logo.png" alt=""/>
+							北京可为互娱文化科技有限公司
+						</h2>
+						<p>地址：北京市朝阳区将台路诺金中心写字楼</p>
+						<p>电话：010-64376519</p>
+					</div>
+					<div class="lists">
+						<a >
+							<img src="__CDN__/kewei/images/animate1.png" alt=""/>
+						</a>
+						<a >
+							<img src="__CDN__/kewei/images/animate.png" alt=""/>
+						</a>
+						<a >
+							<img src="__CDN__/kewei/images/animate2.png" alt=""/>
+						</a>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div class="foot2">
+				<div class="main">
+					<p>www.wecanwell.com 2016 &copy; All Rights Reserved 京ICP备16037158号 </p>
+					<!--<p>健康游戏公告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</p>-->
+				</div>
+			</div>
+		</footer>
+
+            <!--页面低部-->
+
+            <!--蒙板-->
+
+            <div class="mask hidden"></div>
+
+            <!--蒙板-->
+
+            <!--暂不开放-->
+
+            <div class="not_open hidden">
+
+                <p>对不起</p>
+
+                <p>该功能暂不开放</p>
+
+            </div>
+
+            <!--暂不开放-->
+
+            <!--弹出框-->
+
+            <div class="error_box hidden">
+
+                <p>您确认要退出您的账户么?</p>
+
+            </div>
+
+            <!--弹出框-->
+
+        </div>
+
+    </form>
+
+</body>
+
+<script src="__CDN__/kewei/js/common.js"></script>
+
+<script src="__CDN__/kewei/js/Validform_v5.3.2_min.js"></script>
+
+<script>
+
+    $(function () {
+
+        $(".demoform").Validform({
+
+            tiptype: function (msg, o, cssctl) {
+
+                //msg：提示信息;
+
+                //o:{obj:*,type:*,curform:*}, obj指向的是当前验证的表单元素（或表单对象），type指示提示的状态，值为1、2、3、4， 1：正在检测/提交数据，2：通过验证，3：验证失败，4：提示ignore状态, curform为当前form对象;
+
+                //cssctl:内置的提示信息样式控制函数，该函数需传入两个参数：显示提示信息的对象 和 当前提示的状态（既形参o中的type）;
+
+                if (!o.obj.is("form")) {//验证表单元素时o.obj为该表单元素，全部验证通过提交表单时o.obj为该表单对象;
+
+                    var objtip = o.obj.siblings(".Validform_checktip");
+
+                    cssctl(objtip, o.type);
+
+                    objtip.text(msg);
+
+                }
+
+            }
+
+        });
+
+    })
+
+</script>
+
+<script>
+
+
+
+    //暂不开放
+
+    $(".js_fotget").click(function () {
+
+        $(".mask,.not_open").show();
+
+    });
+
+    var name = $('#user_id').val();
+
+    $(".js_nouse").click(function () {
+
+        //$(".mask,.not_open").show();
+
+
+
+        $.ajax({
+
+            type: 'post',
+
+            url: '/plugins/kewei/tools/kewei.ashx?action=login',
+
+            data: { 'user_name': $('#user_id').val(), 'password': $('#password').val() },
+
+            success: function (data) {
+
+                //读取服务器中的数据集中的内容
+
+                var obj = eval("(" + data + ")");
+
+
+
+                if (obj.status == "1") {
+
+                    $(".logBox").css("display", "none");
+
+                    $(".success_enroll_box").css("display", "block");
+
+                    setTimeout(function () { $(".imask").fadeOut(200) }, 1500);
+
+                    // var users_name = $('#user_id').val();
+
+                    location.href = '/index_kw.html';
+
+                }
+
+                else {
+
+                    $(".mask,.error_box").text(obj.msg);
+
+                    $(".mask,.error_box").fadeIn(300);
+
+                    setTimeout(function () { $(".mask,.error_box").fadeOut(200); }, 1500)
+
+                }
+
+            }
+
+        });
+
+    });
+
+    $(".mask").click(function () {
+
+        $(".mask,.not_open").hide();
+
+    });
+
+</script>
+
+</html>
